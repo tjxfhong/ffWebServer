@@ -1,0 +1,225 @@
+SQLITE系统功能函数扩展说明
+
+通用特殊用途
+	ffa_count_edit_art 文章显示时的浏览次数加一
+	ffa_count_edit_goods 商品浏览时浏览次数加一
+	ffa_get_config_db 获得网站设置
+	ffa_mark_list 获得特殊标识定义列表
+	ffa_mark_val 获得特殊标识值
+	ffa_table_fields 获得数据库指定数据表的所有字段定义列表
+	ffa_table_list 获得数据库所有数据表列表
+
+用户登录，注册，获得当前用户数据
+	ffa_user_log_add 增加用户登录日志
+	ffa_user_login_uconn1 用户登录，获得详细一数据
+	ffa_user_login 用户登录，返回用户号等
+
+	ffa_user_query_email 查询用户注册邮箱是否可用
+	ffa_user_query_mobile 查询用户注册手机号是否可用
+	ffa_user_query_uname 查询用户名是否可用
+	ffa_user_reg 用户注册，增加用户数据
+	ffa_user_reg_config 注册用户时，增加新增用户所属的网站设置
+	ffa_user_reg_uconn1 用户注册时，详细表一增加数据
+	ffa_user_reg_uconn2 用户注册时，详细表二增加数据
+	ffa_user_user_db 获得用户数据
+	ffa_user_uconn1 获得用户详细一数据
+	ffa_user_uconn2 获得用户详细二数据
+	ffa_user_sort_list 获得用户分类列表
+	
+网站前端 - 广告
+	ffa_ad_db 获得指定的广告数据
+	ffa_ad_edit 编辑修改网站广告
+	ffa_ad_top_list 获得广告前X条记录列表
+	ffa_ad_rand_list 获得广告随机前X条记录列表
+	ffa_ad_pg_list 获得广告分页列表
+	ffa_ad_kws_pg_list 关键字搜索获得广告分页列表
+	ffa_ad_sort_list 获得网站广告分类列表
+
+网站前端 - 文章
+	ffa_art_add 回复网站文章
+	ffa_art_db 获得指定文章号的文章数据
+	ffa_art_top_list 获得文章前X条记录列表
+	ffa_art_rand_list 获得文章随机前X条记录列表
+	ffa_art_pg_list 获得文章分页列表
+	ffa_art_kws_pg_list 关键字搜索获得文章分页列表
+	ffa_art_sort_db 获得指定的文章分类数据
+	ffa_art_sort_isart 获得指定文章分类下是否有文章
+	ffa_art_sort_issort 获得指定文章分类下是否有子分类
+	ffa_art_sort_list 获得文章分类列表
+
+网站前端 - 友情链接
+	ffa_flink_top_list 获得友情链接前X条记录列表
+	ffa_flink_rand_list 获得友情链接随机前X条记录列表
+	ffa_flink_pg_list 获得友情链接分页列表
+	ffa_flink_kws_pg_list 关键字搜索获得友情链接分页列表
+	ffa_flink_sort_isart 获得友情链接分类下是否有记录
+	ffa_flink_sort_list 获得友情链接分类列表
+
+网站前端 - 商品
+	ffa_mall_db 获得指定商品数据
+	ffa_mall_top_list 获得商品前X条记录列表
+	ffa_mall_rand_list 获得商品随机前X条记录列表
+	ffa_mall_pg_list 获得商品分页列表
+	ffa_mall_kws_pg_list 搜索关键字获得商品分页列表
+	ffa_mall_gsort_db 获得指定商品分类数据
+	ffa_mall_gsort_isart 查询指定商品分类下是否有商品
+	ffa_mall_gsort_list 获得商品分类列表
+
+网站前端 - 留言
+	ffa_msg_add 增加留言记录
+	ffa_msg_db 获得留言或留言回复数据
+	ffa_msg_top_list 获得留言前X条记录列表
+	ffa_msg_rand_list 获得留言随机前X条记录列表
+	ffa_msg_pg_list 获得留言分页列表
+	ffa_msg_kws_pg_list 关键字搜索获得留言分页列表
+	ffa_msg_sort_list 获得留言分类列表
+
+网站前端 - 上传文件
+	ffa_upfile_db 获得上传文件数据
+	ffa_upfile_top_list 获得上传文件前X条记录列表
+	ffa_upfile_rand_list 获得上传文件随机前X条记录列表
+	ffa_upfile_pg_list 获得上传文件分页列表
+	ffa_upfile_sort_list 获得上传文件分类列表
+
+
+网站后台 - 网站定义
+	ffm_config_add 增加网站定义
+	ffm_config_del 删除指定的网站定义
+	ffm_config_edit 编辑修改网站定义
+	ffm_config_pg_list 获得网站定义分页列表
+	ffm_config_kws_pg_list 关键字搜索获得网站定义分页列表
+
+网站后台 - 广告
+	ffm_ad_add 增加网站广告
+	ffm_ad_db 获得指定的广告数据
+	ffm_ad_del 删除网站广告
+	ffm_ad_edit 编辑修改网站广告
+	ffm_ad_pactno_query 查询广告合同号是否可用
+	ffm_ad_top_list 获得广告前X条记录列表
+	ffm_ad_rand_list 获得广告随机前X条记录列表
+	ffm_ad_pg_list 获得广告分页列表
+	ffm_ad_kws_pg_list 关键字搜索获得广告分页列表
+	ffm_ad_sort_add 增加广告分类定义
+	ffm_ad_sort_db 获得指定的网站广告分类数据
+	ffm_ad_sort_del 删除网站广告分类
+	ffm_ad_sort_edit 编辑修改广告分类
+	ffm_ad_sort_isad 查询指定广告分类下是否有广告
+	ffm_ad_sort_list 获得网站广告分类列表
+
+网站后台 - 文章
+	ffm_art_add 增加网站文章
+	ffm_art_db 获得指定文章号的文章数据
+	ffm_art_del 删除指定文章号的文章
+	ffm_art_edit 编辑修改网站文章
+	ffm_art_top_list 获得文章前X条记录列表
+	ffm_art_rand_list 获得文章随机前X条记录列表
+	ffm_art_pg_list 获得文章分页列表
+	ffm_art_kws_pg_list 关键字搜索获得文章分页列表
+	ffm_art_sort_add 增加文章分类
+	ffm_art_sort_db 获得指定的文章分类数据
+	ffm_art_sort_del 删除指定的文章分类
+	ffm_art_sort_edit 编辑修改文章分类
+	ffm_art_sort_isart 获得指定文章分类下是否有文章
+	ffm_art_sort_issort 获得指定文章分类下是否有子分类
+	ffm_art_sort_list 获得文章分类列表
+
+网站后台 - 友情链接
+	ffm_flink_add 增加友情链接记录
+	ffm_flink_db 获得友情链接数据
+	ffm_flink_del 删除友情链接数据
+	ffm_flink_edit 编辑修改友情链接
+	ffm_flink_top_list 获得友情链接前X条记录列表
+	ffm_flink_rand_list 获得友情链接随机前X条记录列表
+	ffm_flink_pg_list 获得友情链接分页列表
+	ffm_flink_kws_pg_list 关键字搜索获得友情链接分页列表
+	ffm_flink_sort_add 增加友情链接分类
+	ffm_flink_sort_db 获得友情链接分类数据
+	ffm_flink_sort_del 删除友情链接分类数据
+	ffm_flink_sort_edit 编辑友情链接分类
+	ffm_flink_sort_isart 获得友情链接分类下是否有记录
+	ffm_flink_sort_list 获得友情链接分类列表
+
+网站后台 - 商品
+	ffm_goods_gserial_query 查询商品货号是否可用
+	ffm_mall_add 增加商品数据
+	ffm_mall_db 获得指定商品数据
+	ffm_mall_del 删除商品数据
+	ffm_mall_edit 编辑商品数据
+	ffm_mall_top_list 获得商品前X条记录列表
+	ffm_mall_rand_list 获得商品随机前X条记录列表
+	ffm_mall_pg_list 获得商品分页列表
+	ffm_mall_kws_pg_list 搜索关键字获得商品分页列表
+	ffm_mall_gsort_add 增加商品分类
+	ffm_mall_gsort_db 获得指定商品分类数据
+	ffm_mall_gsort_del 删除指定商品分类
+	ffm_mall_gsort_edit 编辑商品分类
+	ffm_mall_gsort_isart 查询指定商品分类下是否有商品
+	ffm_mall_gsort_list 获得商品分类列表，筛选分类时，pid分别为11,12,13,14
+
+网站后台 - 特殊标识
+	ffm_mark_add 增加特殊标识定义记录
+	ffm_mark_db 获得特殊标识定义数据
+	ffm_mark_del 删除特殊标识定义数据
+	ffm_mark_edit 编辑修改特殊标识定义
+	ffm_mark_mkey_query 查询特殊标识名是否可用
+	ffm_mark_pg_list 获得特殊标识定义分页列表
+	ffm_mark_sort_add 增加特殊标识分类
+	ffm_mark_sort_db 获得特殊标识分类数据
+	ffm_mark_sort_del 删除特殊标识分类数据
+	ffm_mark_sort_edit 编辑特殊标识分类
+	ffm_mark_sort_isart 获得特殊标识分类下是否有记录
+	ffm_mark_sort_list 获得特殊标识分类列表
+
+网站后台 - 留言
+	ffm_msg_add 增加留言记录
+	ffm_msg_db 获得留言或留言回复数据
+	ffm_msg_del 删除留言或留言回复数据
+	ffm_msg_edit 编辑修改留言或留言回复
+	ffm_msg_top_list 获得留言前X条记录列表
+	ffm_msg_rand_list 获得留言随机前X条记录列表
+	ffm_msg_pg_list 获得留言分页列表
+	ffm_msg_kws_pg_list 关键字搜索获得留言分页列表
+	ffm_msg_sort_add 增加留言分类
+	ffm_msg_sort_db 获得留言分类数据
+	ffm_msg_sort_del 删除留言分类数据
+	ffm_msg_sort_edit 编辑留言分类
+	ffm_msg_sort_isart 获得留言分类下是否有记录
+	ffm_msg_sort_list 获得留言分类列表
+
+网站后台 - 上传文件
+	ffm_upfile_add 增加上传文件记录
+	ffm_upfile_db 获得上传文件数据
+	ffm_upfile_del 删除上传文件数据
+	ffm_upfile_edit 编辑修改上传文件
+	ffm_upfile_top_list 获得上传文件前X条记录列表
+	ffm_upfile_rand_list 获得上传文件随机前X条记录列表
+	ffm_upfile_pg_list 获得上传文件分页列表
+	ffm_upfile_sort_add 增加上传文件分类
+	ffm_upfile_sort_db 获得指定的上传文件分类数据
+	ffm_upfile_sort_del 删除指定的上传文件分类
+	ffm_upfile_sort_edit 编辑修改上传文件分类
+	ffm_upfile_sort_isart 获得指定上传文件分类下是否有上传文件
+	ffm_upfile_sort_list 获得上传文件分类列表
+
+网站后台 - 修改密码
+	ffm_user_change_pwd_get 修改密码时获得用户号
+	ffm_user_change_pwd_getuconn2 修改密码时获得用户详细二记录号
+	ffm_user_change_pwd_uconn2 用户修改密码详细二
+	ffm_user_change_pwd 用户修改密码
+
+网站后台 - 用户分类
+	ffm_user_sort_list 获得用户分类列表
+	ffm_user_sort_add 增加用户分类
+	ffm_user_uconn1_add 增加用户记录用户详细一
+	ffm_user_uconn2_add 增加用户记录用户详细二
+
+	ffm_user_ulog_add 增加用户日志
+
+	ffm_user_user_add 增加用户记录
+
+	ffm_user_yqma_add 增加用户邀请码
+
+
+
+
+

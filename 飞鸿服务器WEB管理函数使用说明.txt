@@ -1,0 +1,154 @@
+服务器定义文件为服务器程序同目录下的config.json
+	文件编写见自带文件内说明
+
+ffwsvmanage		服务器管理主调用函数
+使用方法：
+	<!--{ffwsvmanage 方法名,返回值名,参数集}-->
+范例：
+	<!--{ffwsvmanage getconfig,vtemp,"json=1"}-->
+	<!--{ffwbms_see $vtemp}-->
+ 
+方法：
+	getconfig		获得服务器配置中的指定设置
+		参数：	json = 是否返回JSON数据，1=是，其它=否
+		返回值：serveraddress = 服务器地址
+				serverport = 服务器端口
+				scheme = 是否HTTPS
+				httpsport = HTTPS端口
+		范例：	<!--{ffwsvmanage getconfig,vtemp,"json=1"}-->
+				<!--{ffwbms_see $vtemp}-->
+
+	setconfig		设置服务器配置中的指定设置，POST表单提交
+		参数：	json = 是否返回JSON数据，1=是，其它=否
+		表单：	serveraddress = 服务器地址
+				serverport = 服务器端口，只可以是整数
+				scheme = 是否HTTPS，https=是，其它=否
+				httpsport = HTTPS端口，scheme=https时有效
+		返回值：0 = 成功
+				1 = 失败
+		范例：	<!--{ffwsvmanage setconfig,vtemp,"json=1"}-->
+				<!--{ffwbms_see $vtemp}-->
+
+	getvhostlist	获得服务器配置中的虚拟主机配置列表，VirtualHost下
+		参数：	json = 是否返回JSON数据，1=是，其它=否
+				pg = 要显示的页数，为空或为0时，默认为1，大于总页数时，使用最大页数，小于第一页时，使用1
+				ps = 每页要显示的记录数，为空或为0时，默认为20
+				os = 前后可选页数，为空或为0时，默认为2
+		返回值：["0"] = 列表数据
+					vhostname = 虚拟主机名
+					explain = 网站说明
+					endtime = 网站停止时间
+					suspend = 网站状态
+					dbdriver = 数据库驱动
+				["1"] = 分页数据
+					prev = 上一页号
+					curr = 当前页号
+					next = 下一页号
+					p_list = 上列表
+					n_list = 下列表
+					pages = 总页数
+					total = 记录数
+		范例：	<!--{ffwsvmanage getvhostlist,vtemp,"json=1|pg=".$get['pg']."|ps=1|os=2"}-->
+				<!--{ffwbms_see $vtemp}-->
+	
+	getvhost		获得服务器配置中的指定虚拟主机配置，VirtualHost下
+		参数：	json = 是否返回JSON数据，1=是，其它=否
+				vhn = 要获得数据的虚拟主机名
+		返回值：serveradmin = 服务器管理员用户名
+				serverpass = 服务器管理员密码
+				endtime = 网站停止时间
+				suspend = 网站状态，enable表示启用，disabled表示停用
+				domain = 域名组，多个域名用英文逗号,分隔，
+				iscomp = 是否压缩图片，1=是，0或其它=否
+				sourimg = 是否保留原图，1=是，0或其它=否，iscomp=1时有效
+				comps = 要压缩的宽的数组，例：["1000","300"]，iscomp=1时有效
+				compq = 压缩图片的质量，0-100，默认75，[60,75,90,100]，iscomp=1时有效
+				documentroot = 网站根目录
+				database = 文件数据库所在的目录，SQLITE时有效，存放数据库文件的位置
+				dbdriver = 数据库驱动，支持的数据库有：mysql、sqlite、postgresql，默认=sqlite
+				dbname = 数据库名，mysql、sqlite时有效，默认=ffwbms.ffs
+				dbcharset = 数据库字符编码，默认=utf8
+				dbusername = 数据库用户名，mysql时有效
+				dbpassword = 数据库用户密码，mysql时有效
+				dbprotocol = 数据库连接协议，默认=tcp，mysql时有效
+				dbaddress = 数据库服务器地址或IP，mysql时有效
+				dbport = 数据库服务器端口，默认=3306，mysql时有效
+				errorlog = 错误日志文件，放入logs目录下
+				customlog = 访问日志文件，放入logs目录下
+				explain = 网站说明
+		范例：	<!--{ffwsvmanage getvhost,vtemp,"json=1|vhn=127.0.0.1"}-->
+				<!--{ffwbms_see $vtemp}-->
+
+	addvhost		服务器配置增加虚拟主机
+		参数：	json = 是否返回JSON数据，1=是，其它=否
+				vhn = 要获得数据的虚拟主机名
+		表单：	serveradmin = 服务器管理员用户名
+				serverpass = 服务器管理员密码
+				endtime = 网站停止时间
+				suspend = 网站状态，enable表示启用，disabled表示停用
+				domain = 域名组，多个域名用英文逗号,分隔，
+				iscomp = 是否压缩图片，1=是，0或其它=否
+				sourimg = 是否保留原图，1=是，0或其它=否，iscomp=1时有效
+				comps = 要压缩的宽的数组，例：["1000","300"]，iscomp=1时有效
+				compq = 压缩图片的质量，0-100，默认75，[60,75,90,100]，iscomp=1时有效
+				documentroot = 网站根目录
+				database = 文件数据库所在的目录，SQLITE时有效，存放数据库文件的位置
+				dbdriver = 数据库驱动，支持的数据库有：mysql、sqlite、postgresql，默认=sqlite
+				dbname = 数据库名，mysql、sqlite时有效，默认=ffwbms.ffs
+				dbcharset = 数据库字符编码，默认=utf8
+				dbusername = 数据库用户名，mysql时有效
+				dbpassword = 数据库用户密码，mysql时有效
+				dbprotocol = 数据库连接协议，默认=tcp，mysql时有效
+				dbaddress = 数据库服务器地址或IP，mysql时有效
+				dbport = 数据库服务器端口，默认=3306，mysql时有效
+				errorlog = 错误日志文件，放入logs目录下
+				customlog = 访问日志文件，放入logs目录下
+				explain = 网站说明
+		返回值：
+		范例：	<!--{ffwsvmanage addvhost,vtemp,"json=1|vhn=127.0.0.1"}-->
+				<!--{ffwbms_see $vtemp}-->
+
+	editvhost		服务器配置编辑修改虚拟主机
+		参数：	json = 是否返回JSON数据，1=是，其它=否
+				vhn = 要获得数据的虚拟主机名
+		表单：	serveradmin = 服务器管理员用户名
+				serverpass = 服务器管理员密码
+				endtime = 网站停止时间
+				suspend = 网站状态，enable表示启用，disabled表示停用
+				domain = 域名组，多个域名用英文逗号,分隔，
+				iscomp = 是否压缩图片，1=是，0或其它=否
+				sourimg = 是否保留原图，1=是，0或其它=否，iscomp=1时有效
+				comps = 要压缩的宽的数组，例：["1000","300"]，iscomp=1时有效
+				compq = 压缩图片的质量，0-100，默认75，[60,75,90,100]，iscomp=1时有效
+				documentroot = 网站根目录
+				database = 文件数据库所在的目录，SQLITE时有效，存放数据库文件的位置
+				dbdriver = 数据库驱动，支持的数据库有：mysql、sqlite、postgresql，默认=sqlite
+				dbname = 数据库名，mysql、sqlite时有效，默认=ffwbms.ffs
+				dbcharset = 数据库字符编码，默认=utf8
+				dbusername = 数据库用户名，mysql时有效
+				dbpassword = 数据库用户密码，mysql时有效
+				dbprotocol = 数据库连接协议，默认=tcp，mysql时有效
+				dbaddress = 数据库服务器地址或IP，mysql时有效
+				dbport = 数据库服务器端口，默认=3306，mysql时有效
+				errorlog = 错误日志文件，放入logs目录下
+				customlog = 访问日志文件，放入logs目录下
+				explain = 网站说明
+		返回值：
+		范例：	<!--{ffwsvmanage editvhost,vtemp,"json=1|vhn=127.0.0.1"}-->
+				<!--{ffwbms_see $vtemp}-->
+
+	delvhost		服务器配置删除虚拟主机
+		参数：	json = 是否返回JSON数据，1=是，其它=否
+				vhn = 要获得数据的虚拟主机名
+		返回值：
+		范例：	<!--{ffwsvmanage editvhost,vtemp,"json=1|vhn=127.0.0.1"}-->
+				<!--{ffwbms_see $vtemp}-->
+
+	vhostendtime	服务器配置修改虚拟主机结束时间
+	vhostsuspend	服务器配置修改虚拟主机状态
+	reload			重装装入服务器配置
+		参数：	json = 是否返回JSON数据，1=是，其它=否
+		范例：	<!--{ffwsvmanage reload,vtemp,"json=1"}-->
+				<!--{ffwbms_see $vtemp}-->
+
+	restart			重启服务器

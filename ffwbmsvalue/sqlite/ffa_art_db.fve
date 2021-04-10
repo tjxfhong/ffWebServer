@@ -1,0 +1,46 @@
+/* 获得指定文章号的文章数据
+页面参数：
+	id = 必填，指定的文章号
+页面FORM表单：
+	所有要编辑的字段名和值，注意值的类型，表单中不可以有ID字段
+	例：<input name="username" value="admin" />
+	无
+说明：
+
+id - bigint - 0 - 文章数据类型号
+uid - bigint - 0 - 所属用户号名
+atyp - bigint - 0 - 文章类型（0=文章，1=回复，2=分类页，3=特殊)
+pid - bigint - 0 - 所属分类号
+raid - bigint - 0 - 回复号（0=文章，其它=所属文章号)
+atit - varchar - 100 - 文章标题
+stit - varchar - 20 - 文章短标题（最多20个字符），回复时为回复IP)
+auth - varchar - 100 - 作者
+sour - varchar - 100 - 文章来源
+img1 - varchar - 100 - 标题图1
+img2 - varchar - 100 - 标题图2
+img3 - varchar - 100 - 标题图3
+timg - varchar - 250 - 标题图(上传文件号，多个用英文空格分隔)
+akeys - varchar - 200 - 关键字
+aabs - varchar - 250 - 描述
+atxt - text -  - 正文
+acou - int - 0 - 浏览次数
+indt - datetime -  - 有效时间
+scdt - datetime -  - 录入时间
+amdt - datetime -  - 最后修改时间
+sta1 - int - 0 - 置顶或推荐，0(00)=无，1(01)3(11)=置顶，2(10)3(11)=推荐
+sta2 - int - 0 - 回复或，0(00)=无，1(01)3(11)=可回复，2(10)3(11)=
+sta3 - int - 0 - 预留
+sta4 - int - 0 - 状态，0(00)=无，1(01)3(11)=加粗，2(10)3(11)=加红......
+sta5 - int - 0 - 备用1
+sta6 - int - 0 - 备用2
+sta7 - int - 0 - 备用3
+sta8 - int - 0 - 备用4
+ifyn - int - 0 - 是否可用（0=删除，1=暂停，2=正常）
+
+参数1：1=boolean，2=int,bigint，3=float，4=varchar,date,time,datetime,text,longtext
+参数2：0=原值不处理，1=字符串解密，2=字符串加密，3=当前日期时间，4=用户IP，5=MD5加密，大小写敏感
+*/
+{
+	"funcname":"GetRecord",
+	"tablename":"art"
+}

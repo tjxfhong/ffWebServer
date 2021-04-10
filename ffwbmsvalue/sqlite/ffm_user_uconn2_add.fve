@@ -1,0 +1,52 @@
+/* 增加用户记录用户详细二
+页面参数：
+	无
+页面FORM表单：
+	所有要编辑的字段名和值，注意值的类型，表单中不可以有ID字段
+	例：<input name="username" value="admin" />
+说明：
+	
+--------------------------------
+0 - s10 - varchar(200) - 0 -
+1 - s15 - varchar(50) - 0 -
+2 - d1 - datetime - 0 -
+3 - s7 - varchar(200) - 0 -
+4 - s2 - varchar(100) - 0 -
+5 - i4 - int(11) - 0 -
+6 - d3 - datetime - 0 -
+7 - s - bigint(11) - 0 -
+8 - i1 - int(11) - 0 -
+9 - t1 - text - 0 -
+10 - id - integer - 1 -
+11 - s11 - varchar(50) - 0 -
+12 - s12 - varchar(50) - 0 -
+13 - i3 - int(11) - 0 -
+14 - i5 - int(11) - 0 -
+15 - i7 - int(11) - 0 -
+16 - i10 - int(11) - 0 -
+17 - s9 - varchar(200) - 0 -
+18 - s13 - varchar(50) - 0 -
+19 - s14 - varchar(50) - 0 -
+20 - i2 - int(11) - 0 -
+21 - i6 - int(11) - 0 -
+22 - d2 - datetime - 0 -
+23 - s3 - varchar(100) - 0 -
+24 - i9 - int(11) - 0 -
+25 - s4 - varchar(100) - 0 -
+26 - s5 - varchar(100) - 0 -
+27 - s6 - varchar(200) - 0 -
+28 - s8 - varchar(100) - 0 -
+29 - i8 - int(11) - 0 -
+30 - t2 - text - 0 -
+31 - s1 - varchar(100) - 0 -
+--------------------------------
+参数1：1=boolean，2=int,bigint，3=float，4=varchar,date,time,datetime,text,longtext
+参数2：0=原值不处理，1=字符串解密，2=字符串加密，3=当前日期时间，4=用户IP，5=MD5加密，大小写敏感
+*/
+{
+	"funcname":"InsertRow",
+	"tablename":"user_uconn2",
+	"column":{
+		"ifyn":[2,0]
+	}
+}

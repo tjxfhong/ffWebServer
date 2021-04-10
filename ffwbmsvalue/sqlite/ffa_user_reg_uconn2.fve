@@ -1,0 +1,23 @@
+/* 用户注册时，详细表一增加数据
+页面参数：
+	无
+页面FORM表单：
+	所有要编辑的字段名和值，注意值的类型，表单中不可以有ID字段
+	例：<input name="username" value="admin" />
+
+参数1：1=boolean，2=int,bigint，3=float，4=varchar,date,time,datetime,text,longtext
+参数2：0=原值不处理，1=字符串解密，2=字符串加密，3=当前日期时间，4=用户IP，5=MD5加密，大小写敏感
+*/
+{
+	"funcname":"InsertRow",
+	"tablename":"user_uconn2",
+	"column":{
+		"s":[2,0],/*所属用户号（关联用户表ID）*/
+		"s1":[4,0],/*身份证正面，人像图，或营业执照*/
+		"s2":[4,0],/*身份证背面，国徽面*/
+		"s9":[4,2],/*加密，登录密码，对应user下的pword，查询用*/
+		"s13":[4,5],/*md5加密，联系人身份证号，对应uc1表中的s11，查询用*/
+		"s14":[4,5],/*md5加密，注册手机，对应user表中的mobile，查询用*/
+		"s15":[4,5]/*md5加密，注册邮箱，对应user表中的email，查询用*/
+	}
+}

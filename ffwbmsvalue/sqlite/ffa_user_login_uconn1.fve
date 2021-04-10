@@ -1,0 +1,21 @@
+/* 用户登录，获得详细一数据
+URL参数：
+	uname = 用户名
+	pword = 密码，MD5加密
+页面参数：
+	top = 必选，值固定为1
+	json = 可选，是否返回JSON格式：1=是，其它=否，否返回数组
+例：<!--{ffwbms ffa_user_login,vtemp,"uname=".$post['uname']."|pword=".md5(post['pword'])}-->
+
+参数1：1=boolean，2=int,bigint，3=float，4=varchar,date,time,datetime,text,longtext
+参数2：0=原值不处理，1=字符串解密，2=字符串加密，3=当前日期时间，4=用户IP，5=MD5加密，大小写敏感
+*/
+{
+	"funcname":"GetRecord",
+	"tablename":"user_uconn1",
+	"column":{
+		"s1":[4,1],
+		"s9":[4,0],
+		"i11":[2,0]
+	}
+}

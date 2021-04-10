@@ -1,0 +1,72 @@
+/* 增加网站定义
+页面参数：
+	无
+页面FORM表单：
+	所有要编辑的字段名和值，注意值的类型，表单中不可以有ID字段
+	例：<input name="username" value="admin" />
+说明：
+	增加网站定义主要使用在多用户网站上，每个用户有唯一性的网站定义记录
+--------------------------------
+id - integer - 1 -
+uid - int(11) - 0 -
+sname - varchar(200) - 0 -
+keywords - varchar(200) - 0 -
+description - varchar(200) - 0 -
+auth - varchar(200) - 0 -
+domain - varchar(200) - 0 -
+recordation - varchar(50) - 0 -
+relink - varchar(200) - 0 -
+img - varchar(100) - 0 -
+img1 - varchar(100) - 0 -
+img2 - varchar(100) - 0 -
+img3 - varchar(100) - 0 -
+img4 - varchar(100) - 0 -
+address - varchar(200) - 0 -
+address1 - varchar(200) - 0 -
+qq - varchar(200) - 0 -
+qq1 - varchar(200) - 0 -
+telephone - varchar(200) - 0 -
+phone - varchar(200) - 0 -
+phone1 - varchar(200) - 0 -
+user - varchar(200) - 0 -
+user1 - varchar(200) - 0 -
+atxt - text - 0 -
+scdt - datetime - 0 -
+amdt - datetime - 0 -
+ifyn - int(11) - 0 -
+--------------------------------
+参数1：1=boolean，2=int,bigint，3=float，4=varchar,date,time,datetime,text,longtext
+参数2：0=原值不处理，1=字符串解密，2=字符串加密，3=当前日期时间，4=用户IP，5=MD5加密，大小写敏感
+*/
+{
+	"funcname":"InsertRow",
+	"tablename":"config",
+	"column":{
+		"uid":[4,0],
+		"sname":[4,0],
+		"keywords":[4,0],
+		"description":[4,0],
+		"auth":[4,0],
+		"domain":[4,0],
+		"recordation":[4,0],
+		"relink":[4,0],
+		"img":[4,0],
+		"img1":[4,0],
+		"img2":[4,0],
+		"img3":[4,0],
+		"img4":[4,0],
+		"address":[4,0],
+		"address1":[4,0],
+		"qq":[4,0],
+		"qq1":[4,0],
+		"telephone":[4,0],
+		"phone":[4,0],
+		"phone1":[4,0],
+		"user":[4,0],
+		"user1":[4,0],
+		"atxt":[4,0],
+		"scdt":[4,3],
+		"amdt":[4,3],
+		"ifyn":[2,0]
+	}
+}

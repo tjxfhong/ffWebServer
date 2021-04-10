@@ -1,0 +1,114 @@
+/* 增加商品数据
+页面参数：
+	无
+页面FORM表单：
+	所有要编辑的字段名和值，注意值的类型，表单中不可以有ID字段
+	例：<input name="username" value="admin" />
+说明：
+	scdt，scip，amdt，amip，使用隐藏字段，值为空
+--------------------------------
+id - integer - 1 -
+pid - bigint(11) - 0 -
+uid - bigint(11) - 0 -
+sr1 - int(11) - 0 -
+sr2 - int(11) - 0 -
+sr3 - int(11) - 0 -
+sr4 - int(11) - 0 -
+gserial - varchar(50) - 0 -
+gname - varchar(100) - 0 -
+gname1 - varchar(100) - 0 -
+gname2 - varchar(100) - 0 -
+gimg1 - varchar(100) - 0 -
+gimg2 - varchar(100) - 0 -
+gimg3 - varchar(100) - 0 -
+gimgs - varchar(200) - 0 -
+price1 - int(11) - 0 -
+price2 - int(11) - 0 -
+price3 - int(11) - 0 -
+price4 - int(11) - 0 -
+price5 - int(11) - 0 -
+scdt - datetime - 0 -
+scip - varchar(50) - 0 -
+amdt - datetime - 0 -
+amip - varchar(50) - 0 -
+stdt - datetime - 0 -
+eddt - datetime - 0 -
+gcou - int(11) - 0 -
+gsta - int(11) - 0 -
+gkey - varchar(255) - 0 -
+gdesc - varchar(255) - 0 -
+gtxt - text - 0 -
+inves - int(11) - 0 -
+solds - int(11) - 0 -
+sta1 - int(11) - 0 -
+sta2 - int(11) - 0 -
+sta3 - int(11) - 0 -
+sta4 - int(11) - 0 -
+sta5 - int(11) - 0 -
+sta6 - int(11) - 0 -
+sta7 - int(11) - 0 -
+sta8 - int(11) - 0 -
+sta9 - int(11) - 0 -
+sta10 - int(11) - 0 -
+sta11 - int(11) - 0 -
+sta12 - int(11) - 0 -
+sta13 - int(11) - 0 -
+sta14 - int(11) - 0 -
+sta15 - int(11) - 0 -
+--------------------------------
+参数1：1=boolean，2=int,bigint，3=float，4=varchar,date,time,datetime,text,longtext
+参数2：0=原值不处理，1=字符串解密，2=字符串加密，3=当前日期时间，4=用户IP，5=MD5加密，大小写敏感
+*/
+{
+	"funcname":"InsertRow",
+	"tablename":"mall_goods",
+	"column":{
+		"pid":[2,0],
+		"uid":[2,0],
+		"sr1":[2,0],
+		"sr2":[2,0],
+		"sr3":[2,0],
+		"sr4":[2,0],
+		"gserial":[4,0],
+		"gname":[4,0],
+		"gname1":[4,0],
+		"gname2":[4,0],
+		"gimg1":[4,0],
+		"gimg2":[4,0],
+		"gimg3":[4,0],
+		"gimgs":[4,0],
+		"price1":[2,0],
+		"price2":[2,0],
+		"price3":[2,0],
+		"price4":[2,0],
+		"price5":[2,0],
+		"scdt":[4,3],
+		"scip":[4,4],
+		"amdt":[4,3],
+		"amip":[4,4],
+		"stdt":[4,0],
+		"eddt":[4,0],
+		"gcou":[2,0],
+		"gsta":[2,0],
+		"gkey":[4,0],
+		"gdesc":[4,0],
+		"gtxt":[4,0],
+		"inves":[2,0],
+		"solds":[2,0],
+		"sta1":[2,0],
+		"sta2":[2,0],
+		"sta3":[2,0],
+		"sta4":[2,0],
+		"sta5":[2,0],
+		"sta6":[2,0],
+		"sta7":[2,0],
+		"sta8":[2,0],
+		"sta9":[2,0],
+		"sta10":[2,0],
+		"sta11":[2,0],
+		"sta12":[2,0],
+		"sta13":[2,0],
+		"sta14":[2,0],
+		"sta15":[2,0]
+	}
+}

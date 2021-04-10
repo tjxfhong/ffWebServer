@@ -1,0 +1,39 @@
+/* 增加用户邀请码
+页面参数：
+	无
+页面FORM表单：
+	所有要编辑的字段名和值，注意值的类型，表单中不可以有ID字段
+	例：<input name="username" value="admin" />
+说明：
+	cdt，cip，使用隐藏字段，值为空
+--------------------------------
+id - integer - 1 -
+uid - bigint(11) - 0 -
+yqm - varchar(50) - 0 -
+cdt - datetime - 0 -
+cip - varchar(50) - 0 -
+isu - int(11) - 0 -
+udt - datetime - 0 -
+uip - varchar(50) - 0 -
+i1 - int(11) - 0 -
+i2 - int(11) - 0 -
+
+--------------------------------
+参数1：1=boolean，2=int,bigint，3=float，4=varchar,date,time,datetime,text,longtext
+参数2：0=原值不处理，1=字符串解密，2=字符串加密，3=当前日期时间，4=用户IP，5=MD5加密，大小写敏感
+*/
+{
+	"funcname":"InsertRow",
+	"tablename":"user_yqma",
+	"column":{
+		"uid":[2,0],
+		"yqm":[4,0],
+		"cdt":[4,3],
+		"cip":[4,4],
+		"isu":[2,0],
+		"udt":[4,0],
+		"uip":[4,0],
+		"i1":[2,0],
+		"i2":[2,0]
+	}
+}

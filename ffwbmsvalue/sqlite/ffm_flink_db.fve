@@ -1,0 +1,33 @@
+/* 获得友情链接数据
+页面参数：
+	id = 必填，要获得数据的友情链接号
+页面FORM表单：
+	所有要编辑的字段名和值，注意值的类型，表单中不可以有ID字段
+	例：<input name="username" value="admin" />
+说明：
+	增加网站定义主要使用在多用户网站上，每个用户有唯一性的网站定义记录
+--------------------------------
+id - integer - 1 -
+uid - bigint(11) - 0 -
+pid - bigint(11) - 0 -
+ltit - varchar(100) - 0 -
+lurl - varchar(100) - 0 -
+llogo - varchar(100) - 0 -
+llogoimg - varchar(100) - 0 -
+ifimg - int(11) - 0 -
+lhint - varchar(150) - 0 -
+lstate - datetime - 0 -
+lstop - datetime - 0 -
+sta1 - int(11) - 0 -
+sta2 - int(11) - 0 -
+sta3 - int(11) - 0 -
+sta4 - int(11) - 0 -
+ifyn - int(11) - 0 -
+--------------------------------
+参数1：1=boolean，2=int,bigint，3=float，4=varchar,date,time,datetime,text,longtext
+参数2：0=原值不处理，1=字符串解密，2=字符串加密，3=当前日期时间，4=用户IP，5=MD5加密，大小写敏感
+*/
+{
+	"funcname":"GetRecord",
+	"tablename":"flink_link"
+}

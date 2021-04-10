@@ -1,0 +1,47 @@
+/* 增加用户记录
+页面参数：
+	无
+页面FORM表单：
+	所有要编辑的字段名和值，注意值的类型，表单中不可以有ID字段
+	例：<input name="username" value="admin" />
+说明：
+	
+--------------------------------
+sid - bigint(11) - 0 -
+pwd2 - varchar(200) - 0 -
+utype - varchar(200) - 0 -
+regdt - datetime - 0 -
+regip - varchar(50) - 0 -
+sta1 - int(11) - 0 -
+pwd1 - varchar(200) - 0 -
+sta4 - varchar(50) - 0 -
+sta5 - int(11) - 0 -
+auth - int(11) - 0 -
+sta3 - int(11) - 0 -
+stopdt - datetime - 0 -
+ifyn - int(11) - 0 -
+sta2 - int(11) - 0 -
+sta6 - int(11) - 0 -
+pid0 - bigint(11) - 0 -
+pid1 - bigint(11) - 0 -
+pid3 - bigint(11) - 0 -
+pword - varchar(50) - 0 -
+sta8 - varchar(200) - 0 -
+pid2 - bigint(11) - 0 -
+upin - varchar(50) - 0 -
+email - varchar(200) - 0 -
+mobile - varchar(200) - 0 -
+id - integer - 1 -
+uname - varchar(50) - 0 -
+sta7 - varchar(50) - 0 -
+--------------------------------
+参数1：1=boolean，2=int,bigint，3=float，4=varchar,date,time,datetime,text,longtext
+参数2：0=原值不处理，1=字符串解密，2=字符串加密，3=当前日期时间，4=用户IP，5=MD5加密，大小写敏感
+*/
+{
+	"funcname":"InsertRow",
+	"tablename":"user_user",
+	"column":{
+		"ifyn":[2,0]
+	}
+}

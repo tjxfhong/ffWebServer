@@ -1,0 +1,66 @@
+/* 获得用户数据
+URL参数：
+	无
+页面参数：
+	无
+	json = 可选，是否返回JSON格式：1=是，其它=否，否返回数组
+GET参数：
+	无
+POST参数：
+	无
+范例：
+
+参数1：1=boolean，2=int,bigint，3=float，4=varchar,date,time,datetime,text,longtext
+参数2：0=原值不处理，1=字符串解密，2=字符串加密，3=当前日期时间，4=用户IP，5=MD5加密，大小写敏感
+
+id - integer - 用户号，自增长
+sid - bigint(11) - 用户类型，关联用户类型表ID
+pid0 - bigint(11) - 所属合伙人用户号
+pid1 - bigint(11) - 上上上级用户号
+pid2 - bigint(11) - 上上级用户号
+pid3 - bigint(11) - 上级用户号
+uname - varchar(50) - 用户名（唯一，不可为空）
+pword - varchar(50) - 密码登录（不可为空），md5加密，AES放到c_table_user_uconn1中的s14
+pwd1 - varchar(200) - 找回密码问题，加密
+pwd2 - varchar(200) - 找回密码答案，加密
+upin - varchar(50) - 安全码四位数字，不够时前面补0，更改邮箱时候需要，加密
+email - varchar(200) - 电子邮箱，不可为空，唯一性，加密，md5放到c_table_user_uconn1中的i5
+mobile - varchar(200) - 手机号，不可为空，唯一性，加密，md5放到c_table_user_uconn1中的i4
+regdt - datetime - 注册时间，自动系统日期时间，不用输入
+regip - varchar(50) - 注册IP
+utype - varchar(200) - 加密，用户权限
+ifyn - int(11) - 是否可用（0=删除，1=暂停，2=正常，3=未验证，未验证时验证码放入sta4，发送验证邮件，验证链接验证后清空sta4,修改=2）
+sta1 - int(11) - 审核资料是否修改（2=审核，其它=修改）
+sta2 - int(11) - 用户所属留言分类号
+sta3 - int(11) - 状态3
+sta4 - varchar(50) - 状态4,临时用邮件验证码串，微信返回得用户ID
+sta5 - int(11) - 预留
+sta6 - int(11) - 预留
+sta7 - varchar(50) - 预留
+sta8 - varchar(200) -预留 
+stopdt - datetime - 到期时间
+auth - int(11) - 信用审核（00-0=无，01-1=，10-2=，11-3=）
+*/
+{
+	"funcname":"GetRecord",
+	"tablename":"user_user",
+	"column":{
+		"id":[2,0],
+		"sid":[2,0],
+		"pid0":[2,0],
+		"pid1":[2,0],
+		"pid2":[2,0],
+		"pid3":[2,0],
+		"uname":[4,0],
+		"email":[4,1],
+		"mobile":[4,1],
+		"regdt":[4,0],
+		"utype":[4,0],
+		"ifyn":[2,0],
+		"sta2":[2,0],
+		"sta4":[4,0],
+		"stopdt":[4,0],
+		"auth":[2,0]
+	}
+}
+

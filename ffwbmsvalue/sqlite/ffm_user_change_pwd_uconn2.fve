@@ -1,0 +1,18 @@
+/* 用户修改密码详细二
+页面参数：
+	id = 必选，用户详细二ID号
+	json = 可选，是否返回JSON格式：1=是，其它=否，否返回数组
+页面FORM表单：
+	所有要编辑的字段名和值，注意值的类型，表单中不可以有ID字段
+	例：<input name="username" value="admin" />
+
+参数1：1=boolean，2=int,bigint，3=float，4=varchar,date,time,datetime,text,longtext
+参数2：0=原值不处理，1=字符串解密，2=字符串加密，3=当前日期时间，4=用户IP，5=MD5加密，大小写敏感
+*/
+{
+	"funcname":"UpdateRow",
+	"tablename":"user_uconn2",
+	"column":{
+		"s9":[4,2]
+	}
+}

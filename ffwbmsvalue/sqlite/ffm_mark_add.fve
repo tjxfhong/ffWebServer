@@ -1,0 +1,40 @@
+/* 增加特殊标识定义记录
+页面参数：
+	无
+页面FORM表单：
+	所有要编辑的字段名和值，注意值的类型，表单中不可以有ID字段
+	例：<input name="username" value="admin" />
+说明：
+	
+--------------------------------
+id - integer -
+pid - bigint(11) -
+uid - bigint(11) -
+mkey - varchar(100) -
+mval - varchar(250) -
+isdeve - int(11) -
+sta1 - int(11) -
+sta2 - int(11) -
+sta3 - int(11) -
+sta4 - varchar(250) -
+ifyn - int(11) -
+--------------------------------
+参数1：1=boolean，2=int,bigint，3=float，4=varchar,date,time,datetime,text,longtext
+参数2：0=原值不处理，1=字符串解密，2=字符串加密，3=当前日期时间，4=用户IP，5=MD5加密，大小写敏感
+*/
+{
+	"funcname":"InsertRow",
+	"tablename":"mark_db",
+	"column":{
+		"uid":[2,0],
+		"pid":[2,0],
+		"mkey":[4,0],
+		"mval":[4,0],
+		"isdeve":[2,0],
+		"sta1":[2,0],
+		"sta2":[2,0],
+		"sta3":[2,0],
+		"sta4":[4,0],
+		"ifyn":[2,0]
+	}
+}

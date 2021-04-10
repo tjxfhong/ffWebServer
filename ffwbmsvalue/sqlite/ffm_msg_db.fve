@@ -1,0 +1,61 @@
+/* 获得留言或留言回复数据
+页面参数：
+	id = 必填，要获得数据的留言号或留言回复号
+页面FORM表单：
+	所有要编辑的字段名和值，注意值的类型，表单中不可以有ID字段
+	例：<input name="username" value="admin" />
+说明：
+	
+--------------------------------
+id - integer - 1 -
+uid - bigint(11) - 0 -
+pid - bigint(11) - 0 -
+raid - bigint(11) - 0 -
+mtit - varchar(100) - 0 -
+mail - varchar(200) - 0 -
+mobi - varchar(200) - 0 -
+danw - varchar(250) - 0 -
+xinm - varchar(200) - 0 -
+mtxt - text - 0 -
+mcou - int(11) - 0 -
+fbdt - datetime - 0 -
+sta1 - int(11) - 0 -
+sta2 - int(11) - 0 -
+sta3 - varchar(50) - 0 -
+sta4 - int(11) - 0 -
+sta5 - int(11) - 0 -
+sta6 - int(11) - 0 -
+sta7 - int(11) - 0 -
+sta8 - int(11) - 0 -
+ifyn - int(11) - 0 -
+--------------------------------
+参数1：1=boolean，2=int,bigint，3=float，4=varchar,date,time,datetime,text,longtext
+参数2：0=原值不处理，1=字符串解密，2=字符串加密，3=当前日期时间，4=用户IP，5=MD5加密，大小写敏感
+*/
+{
+	"funcname":"GetRecord",
+	"tablename":"message_msg",
+	"column":{
+		"id":[2,0],
+		"uid":[2,0],
+		"pid":[2,0],
+		"raid":[2,0],
+		"mtit":[4,0],
+		"mail":[4,1],
+		"mobi":[4,1],
+		"danw":[4,1],
+		"xinm":[4,1],
+		"mtxt":[4,0],
+		"mcou":[2,0],
+		"fbdt":[4,0],
+		"sta1":[2,0],
+		"sta2":[2,0],
+		"sta3":[4,0],
+		"sta4":[2,0],
+		"sta5":[2,0],
+		"sta6":[2,0],
+		"sta7":[2,0],
+		"sta8":[2,0],
+		"ifyn":[2,0]
+	}
+}
